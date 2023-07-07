@@ -20,14 +20,7 @@ export default function Products({ pizzaNum, prod }) {
       <div className="p-6 flex justify-around flex-wrap">
         {pizArr.map((id, index) => {
           var randomNum = Math.floor(Math.random() * (12 - 5 + 1)) + 5;
-          return (
-            <Pizza
-              key={index}
-              name={"Pepperoni"}
-              price={`$${randomNum}.99`}
-              id={id}
-            />
-          );
+          return <Pizza key={index} id={id} />;
         })}
       </div>
       {!prod && (
