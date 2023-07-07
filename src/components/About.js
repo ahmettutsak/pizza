@@ -24,8 +24,8 @@ export default function About() {
               cartoon-themed venue offers an unforgettable pizza experience.
               With entertaining play areas, interactive activities, and friendly
               staff, we strive to put a smile on the face of every visitor. At
-              Pizza, we are here to bring happiness with every bite. We can't
-              wait to welcome you among us!
+              Pizza, we are here to bring happiness with every bite. We can
+              {"\u0027"}t wait to welcome you among us!
             </p>
             <Image
               className="rounded-full absolute right-0 -top-48 z-[1] "
