@@ -9,13 +9,13 @@ export default function About() {
       <div className="flex flex-col">
         <p className="p-4 text-2xl mt-24 max-w-[1400px]">
           Hello! We are Pizza, a whimsical world where the most delicious and
-          fun pizzas come to life. With every slice, you'll taste our creativity
-          and passion. Immerse yourself in a colorful and vibrant atmosphere
-          where we bring children's imaginations to reality. Together with our
-          team, we've created a place where everyone can embark on an
-          unforgettable adventure while discovering our mouthwatering pizzas.
-          Welcome to Pizza, where we blend the joy of pizza with
-          cartoon-inspired entertainment!
+          fun pizzas come to life. With every slice, you{"\u0027"}ll taste our
+          creativity and passion. Immerse yourself in a colorful and vibrant
+          atmosphere where we bring children{"\u0027"}s imaginations to reality.
+          Together with our team, we{"\u0027"}ve created a place where everyone
+          can embark on an unforgettable adventure while discovering our
+          mouthwatering pizzas. Welcome to Pizza, where we blend the joy of
+          pizza with cartoon-inspired entertainment!
         </p>
         <Image
           className="self-end rounded-3xl"
