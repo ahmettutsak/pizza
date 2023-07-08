@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import logo from "../../public/images/humans/logo.png";
 import Link from "next/link";
+import s from "@/../public/s.svg";
 
 export default function Navbar() {
   return (
@@ -31,17 +32,19 @@ export default function Navbar() {
           </Link>
           <Link
             className="hover:scale-125 hover:-translate-y-2 transition-all"
-            href={"/"}
+            href={"/about"}
           >
             About
           </Link>
-          <Link
-            className="hover:scale-125 hover:-translate-y-2 transition-all"
-            href={"/"}
-          >
-            Contact
-          </Link>
         </div>
+      </div>
+      <div>
+        <Image
+          className="absolute right-56 top-24"
+          width={40}
+          src={s}
+          alt="shopping cart"
+        />
       </div>
     </nav>
   );
