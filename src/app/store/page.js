@@ -53,7 +53,7 @@ export default function Store() {
     <div className="w-full flex">
       {/* form başlangıcı */}
       <div className="bg-[#df6f63] h-full relative max-w-[300px] flex items-center flex-col">
-        <form className="mt-12 flex w-full h-full flex-col items-center">
+        <form className="mt-12 flex w-full h-full flex-col p-12 items-center">
           <input
             className="p-4 rounded text-black"
             type="text"
@@ -65,7 +65,7 @@ export default function Store() {
             {ingredientList.length > 0 &&
               ingredientList.map((ing, index) => {
                 return (
-                  <label key={index} className="text-xl p-1 mt-2">
+                  <label key={index} className="w-60 text-xl p-2 mt-2">
                     <input
                       className="w-12"
                       type="checkbox"
@@ -80,7 +80,7 @@ export default function Store() {
         </form>
       </div>
       {/* form bitişi */}
-      <div className="flex flex-wrap p-12 text-black">
+      <div className="flex flex-wrap p-12 text-black items-start">
         {filteredPizzas.map((pizza, index) => {
           return (
             <Pizza
