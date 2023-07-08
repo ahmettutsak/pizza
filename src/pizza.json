@@ -1,0 +1,127 @@
+{
+  "pizzas": [
+    {
+      "name": "Margherita",
+      "price": "12.99",
+      "ingredients": ["Tomato sauce", "Mozzarella cheese", "Basil"]
+    },
+    {
+      "name": "Pepperoni",
+      "price": "14.99",
+      "ingredients": ["Tomato sauce", "Mozzarella cheese", "Pepperoni"]
+    },
+    {
+      "name": "Vegetarian",
+      "price": "13.99",
+      "ingredients": [
+        "Tomato sauce",
+        "Mozzarella cheese",
+        "Mushrooms",
+        "Onions",
+        "Bell peppers",
+        "Black olives"
+      ]
+    },
+    {
+      "name": "Hawaiian",
+      "price": "15.99",
+      "ingredients": ["Tomato sauce", "Mozzarella cheese", "Ham", "Pineapple"]
+    },
+    {
+      "name": "BBQ Chicken",
+      "price": "16.99",
+      "ingredients": [
+        "BBQ sauce",
+        "Mozzarella cheese",
+        "Grilled chicken",
+        "Red onions",
+        "Cilantro"
+      ]
+    },
+    {
+      "name": "Supreme",
+      "price": "17.99",
+      "ingredients": [
+        "Tomato sauce",
+        "Mozzarella cheese",
+        "Pepperoni",
+        "Italian sausage",
+        "Mushrooms",
+        "Onions",
+        "Bell peppers",
+        "Black olives"
+      ]
+    },
+    {
+      "name": "Four Cheese",
+      "price": "13.99",
+      "ingredients": [
+        "Tomato sauce",
+        "Mozzarella cheese",
+        "Cheddar cheese",
+        "Parmesan cheese",
+        "Feta cheese"
+      ]
+    },
+    {
+      "name": "Meat Lovers",
+      "price": "18.99",
+      "ingredients": [
+        "Tomato sauce",
+        "Mozzarella cheese",
+        "Pepperoni",
+        "Italian sausage",
+        "Ham",
+        "Bacon"
+      ]
+    },
+    {
+      "name": "Mediterranean",
+      "price": "15.99",
+      "ingredients": [
+        "Olive oil",
+        "Mozzarella cheese",
+        "Spinach",
+        "Tomatoes",
+        "Black olives",
+        "Feta cheese",
+        "Garlic"
+      ]
+    },
+    {
+      "name": "Buffalo Chicken",
+      "price": "16.99",
+      "ingredients": [
+        "Buffalo sauce",
+        "Mozzarella cheese",
+        "Grilled chicken",
+        "Red onions",
+        "Ranch dressing"
+      ]
+    },
+    {
+      "name": "Veggie Delight",
+      "price": "14.99",
+      "ingredients": [
+        "Tomato sauce",
+        "Mozzarella cheese",
+        "Mushrooms",
+        "Onions",
+        "Bell peppers",
+        "Tomatoes",
+        "Black olives"
+      ]
+    },
+    {
+      "name": "White Garlic",
+      "price": "13.99",
+      "ingredients": [
+        "Olive oil",
+        "Mozzarella cheese",
+        "Garlic",
+        "Tomatoes",
+        "Spinach"
+      ]
+    }
+  ]
+}

@@ -25,7 +25,7 @@ export default function Navbar() {
           </Link>
           <Link
             className="hover:scale-125 hover:-translate-y-2 transition-all"
-            href={"/"}
+            href={"/store"}
           >
             Store
           </Link>
