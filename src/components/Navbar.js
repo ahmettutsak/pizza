@@ -57,7 +57,7 @@ export default function Navbar() {
               alt="shopping cart"
             />
             {cartItems.length > 0 && (
-              <div className="text-black text-3xl rounded-full absolute z-50 right-48 top-24">
+              <div className="text-black text-3xl rounded-full absolute z-50 xl:right-48 right-[200px] top-40 xl:top-24">
                 {calculateAmount()}
               </div>
             )}
