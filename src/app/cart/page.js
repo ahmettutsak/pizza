@@ -118,7 +118,7 @@ export default function Cart() {
             </div>
           </div>
         ))}
-        <div className="text-4xl absolute bottom-0 right-8">
+        <div className="text-4xl w-full text-right">
           Total: ${calculatePrice()}
         </div>
       </div>
