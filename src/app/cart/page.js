@@ -52,22 +52,21 @@ export default function Cart() {
   };
 
   return (
-    <div className="bg-[#df6f63] h-full w-full flex">
+    <div className="bg-[#df6f63] h-full w-full flex flex-col xl:flex-row">
       <div className="flex flex-col p-12 gap-4 w-full">
         {cartItems?.map((cartItem, index) => (
           <div
-            className="w-full bg-red-400 rounded-2xl p-4 flex justify-between items-center"
+            className="w-full bg-red-400 rounded-2xl xl:p-4 flex justify-between items-center"
             key={cartItem.id}
           >
-            <div className="flex gap-12">
+            <div className="flex gap-4 justify-center xl:gap-12">
               <Image
-                className="rounded-full"
-                width={200}
+                className="rounded-full w-[75px] h-[75px] xl:w-[200px] xl:h-[200px]"
                 src={images[cartItem.id - 1]}
                 alt="pizza"
               />
               <div className="flex flex-col gap-4 justify-center">
-                <h2 className="text-3xl">{cartItem.name}</h2>
+                <h2 className="text-xl xl:text-3xl">{cartItem.name}</h2>
                 <h2 className="text-xl">
                   ${(cartItem.price * cartItem.amount).toFixed(2)}
                 </h2>
@@ -84,13 +83,13 @@ export default function Cart() {
                     amount: 1,
                   })
                 }
-                className="p-8 bg-green-600 rounded-2xl w-16 h-16 flex justify-center items-center text-5xl"
+                className="bg-green-600 rounded-2xl xl:w-16 xl:h-16 w-10 h-10 flex justify-center items-center text-2xl xl:text-5xl"
               >
                 +
               </button>
               <button
                 onClick={() => handleRemoveToCart(cartItem.id)}
-                className="p-8 bg-red-600 rounded-2xl w-16 h-16 flex justify-center items-center text-5xl"
+                className="bg-red-600 rounded-2xl xl:w-16 xl:h-16 w-10 h-10 flex justify-center items-center text-2xl xl:text-5xl"
               >
                 -
               </button>
@@ -98,11 +97,15 @@ export default function Cart() {
           </div>
         ))}
       </div>
-      <div className="bg-red-400 mt-12 p-12 w-[600px] min-h-[1000px] rounded">
-        <h2 className="text-4xl">CheckOut</h2>
+      <div
+        className={`bg-red-400 mt-12 p-12 xl:w-[600px] xl:min-h-[1000px] ${
+          cartItems.length > 0 ? "relative" : "absolute"
+        } xl:relative bottom-0 w-full rounded`}
+      >
+        <h2 className="xl:text-4xl">CheckOut</h2>
         {cartItems?.map((cartItem, index) => (
           <div
-            className="w-full bg-red-400 rounded-2xl p-4 flex justify-between items-center"
+            className="xl:bg-red-400 rounded-2xl p-4 hidden xl:flex justify-between items-center"
             key={cartItem.id}
           >
             <div className="flex gap-6">
@@ -118,7 +121,7 @@ export default function Cart() {
             </div>
           </div>
         ))}
-        <div className="text-4xl w-full text-right">
+        <div className="text-4xl w-full xl:text-right">
           Total: ${calculatePrice()}
         </div>
       </div>
