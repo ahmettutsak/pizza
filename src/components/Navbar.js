@@ -3,8 +3,19 @@ import Image from "next/image";
 import logo from "../../public/images/humans/logo.png";
 import Link from "next/link";
 import s from "@/../public/s.svg";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
+  const calculateAmount = () => {
+    let total = 0;
+    cartItems.forEach((item) => {
+      total += item.amount;
+    });
+    return total;
+  };
+
   return (
     <nav className="bg-[#df6f63] flex justify-center">
       <div className="p-8 flex flex-col justify-center items-center">
@@ -39,12 +50,19 @@ export default function Navbar() {
         </div>
       </div>
       <div>
-        <Image
-          className="absolute right-56 top-24"
-          width={40}
-          src={s}
-          alt="shopping cart"
-        />
+        <Link href={"/cart"}>
+          <Image
+            className="absolute right-56 top-24"
+            width={40}
+            src={s}
+            alt="shopping cart"
+          />
+          {cartItems.length > 0 && (
+            <div className="text-black text-3xl rounded-full absolute z-50 right-48 top-24">
+              {calculateAmount()}
+            </div>
+          )}
+        </Link>
       </div>
     </nav>
   );

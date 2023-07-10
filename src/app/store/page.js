@@ -4,9 +4,15 @@ import React, { useState } from "react";
 import Pizza from "@/components/Pizza";
 import pizzas from "@/pizza.json";
 
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart, removeFromCart } from "@/redux/features/cart-slice";
+
 export default function Store() {
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
 
   const handleCheckboxChange = (event) => {
     const checkboxValue = event.target.value;
@@ -27,15 +33,15 @@ export default function Store() {
     setSearchTerm(event.target.value);
   };
 
-  // Filtrelenmiş pizzaların listesini oluştur
+  const handleAddToCart = (pizza) => {
+    dispatch(addToCart(pizza));
+  };
+
   const filteredPizzas = pizzas.pizzas
     .filter((pizza) => {
-      // Eğer hiçbir malzeme seçilmediyse, tüm pizzaları göster
       if (selectedCheckboxes.length === 0) {
         return true;
       }
-
-      // Pizza'nın malzemeleri seçilen malzemeler listesinde tamamen yer alıyorsa, pizzayı göster
       return selectedCheckboxes.every((ingredient) =>
         pizza.ingredients.includes(ingredient)
       );
@@ -44,14 +50,12 @@ export default function Store() {
       pizza.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-  // Malzeme listesi
   const ingredientList = [
     ...new Set(pizzas.pizzas.flatMap((pizza) => pizza.ingredients)),
   ];
 
   return (
     <div className="w-full flex">
-      {/* form başlangıcı */}
       <div className="bg-[#df6f63] h-full relative max-w-[300px] flex items-center flex-col">
         <form className="mt-12 flex w-full h-full flex-col p-12 items-center">
           <input
@@ -79,7 +83,6 @@ export default function Store() {
           </div>
         </form>
       </div>
-      {/* form bitişi */}
       <div className="flex flex-wrap p-12 text-black items-start">
         {filteredPizzas.map((pizza, index) => {
           return (
@@ -88,6 +91,14 @@ export default function Store() {
               id={index + 1}
               name={pizza.name}
               price={pizza.price}
+              handleAddToCart={() =>
+                handleAddToCart({
+                  id: index + 1,
+                  name: pizza.name,
+                  price: pizza.price,
+                  amount: 1,
+                })
+              }
             />
           );
         })}

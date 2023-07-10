@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useSelector, useDispatch } from "react-redux";
 
 import one from "../../public/images/pizzas/1.png";
 import two from "../../public/images/pizzas/2.png";
@@ -13,9 +16,7 @@ import ten from "../../public/images/pizzas/10.png";
 import eleven from "../../public/images/pizzas/11.png";
 import twelve from "../../public/images/pizzas/12.png";
 
-import pizzas from "@/pizza.json";
-
-export default function Pizza({ id, name, price }) {
+export default function Pizza({ id, name, price, handleAddToCart }) {
   const images = [
     one,
     two,
@@ -30,6 +31,7 @@ export default function Pizza({ id, name, price }) {
     eleven,
     twelve,
   ];
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
   return (
     <div className="p-6 flex flex-col justify-center items-center gap-5 min-w-[300px]">
@@ -42,7 +44,12 @@ export default function Pizza({ id, name, price }) {
       />
       <h2 className="text-2xl">{name}</h2>
       <h2 className="text-xl font-bold">${price}</h2>
-      <div className="text-xl font-bold bg-[#CADE78] p-3 rounded">Add Cart</div>
+      <button
+        onClick={() => handleAddToCart({ id, name, price })}
+        className="text-xl font-bold bg-[#CADE78] p-3 rounded"
+      >
+        Add Cart
+      </button>
     </div>
   );
 }
