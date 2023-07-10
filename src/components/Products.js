@@ -16,7 +16,7 @@ export default function Products({ pizzaNum, prod }) {
   }
 
   return (
-    <div className="h-screen bg-white text-black w-full p-12">
+    <div className="h-full xl:h-screen bg-white text-black w-full p-12">
       <h2 className="text-5xl p-12 -rotate-3">Pizzas ❤️</h2>
       <div className="p-6 flex justify-around flex-wrap">
         {pizArr.map((id, index) => {

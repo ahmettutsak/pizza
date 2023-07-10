@@ -5,7 +5,7 @@ import smile from "@/../public/images/humans/smile.jpg";
 export default function Contact() {
   return (
     <div className="p-12 w-full bg-[#e9bc73]">
-      <div className="flex justify-evenly items-center">
+      <div className="flex flex-col xl:flex-row justify-evenly items-center">
         <Image className="rounded-3xl" width={400} src={smile} alt="smiling" />
         <div className="flex flex-col p-12 gap-8">
           <h2 className="text-4xl">We love to hear you 👋</h2>

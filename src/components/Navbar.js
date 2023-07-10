@@ -28,7 +28,7 @@ export default function Navbar() {
             Pizza
           </h2>
         </div>
-        <div className="flex gap-8 text-3xl mt-4 text-white">
+        <div className="flex gap-4 xl:gap-8 text-xl xl:text-3xl mt-4 text-white">
           <Link
             className="hover:scale-125 hover:-translate-y-2 transition-all"
             href={"/"}
@@ -48,21 +48,21 @@ export default function Navbar() {
             About
           </Link>
         </div>
-      </div>
-      <div>
-        <Link href={"/cart"}>
-          <Image
-            className="absolute right-56 top-24"
-            width={40}
-            src={s}
-            alt="shopping cart"
-          />
-          {cartItems.length > 0 && (
-            <div className="text-black text-3xl rounded-full absolute z-50 right-48 top-24">
-              {calculateAmount()}
-            </div>
-          )}
-        </Link>
+        <div className="mt-12 xl:mt-0">
+          <Link href={"/cart"}>
+            <Image
+              className="xl:absolute xl:right-56 xl:top-24"
+              width={40}
+              src={s}
+              alt="shopping cart"
+            />
+            {cartItems.length > 0 && (
+              <div className="text-black text-3xl rounded-full absolute z-50 right-48 top-24">
+                {calculateAmount()}
+              </div>
+            )}
+          </Link>
+        </div>
       </div>
     </nav>
   );

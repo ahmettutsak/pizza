@@ -12,4 +12,6 @@
   html { 
    font-family: 'GloriaHallelujah' !important;
    color: white;
+   overflow-x: hidden;
+   background-color: #df6f63;
   }

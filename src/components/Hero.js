@@ -20,6 +20,7 @@ export default function Hero() {
         </p>
       </div>
       <motion.div
+        className="hidden xl:flex"
         animate={{
           rotate: [5, -5, 5],
           borderRadius: ["0%", "0%", "50%", "50%", "0%"],

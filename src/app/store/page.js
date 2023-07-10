@@ -10,6 +10,7 @@ import { addToCart, removeFromCart } from "@/redux/features/cart-slice";
 export default function Store() {
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
@@ -54,9 +55,24 @@ export default function Store() {
     ...new Set(pizzas.pizzas.flatMap((pizza) => pizza.ingredients)),
   ];
 
+  const handleMenuOpen = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <div className="w-full flex">
-      <div className="bg-[#df6f63] h-full relative max-w-[300px] flex items-center flex-col">
+    <div className="w-full flex bg-white">
+      <div
+        className={`absolute xl:hidden ${
+          !menuOpen ? "left-0" : "left-72"
+        } top-72 rounded p-4 bg-[#df6f63]`}
+      >
+        <div onClick={() => handleMenuOpen()}>{">"}</div>
+      </div>
+      <div
+        className={`bg-[#df6f63] h-full max-w-[300px] relative ${
+          menuOpen ? "flex" : "hidden"
+        } xl:flex items-center flex-col`}
+      >
         <form className="mt-12 flex w-full h-full flex-col p-12 items-center">
           <input
             className="p-4 rounded text-black"
